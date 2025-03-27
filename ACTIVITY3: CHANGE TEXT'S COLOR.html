@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #text {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        #changeTextButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="text">Click this button to change the color of the text</div>
+    <button id="changeTextButton">Change Text Color</button>
+
+    <script>
+        var button = document.getElementById('changeTextButton');
+        var text = document.getElementById('text');
+        var isOriginalState = true;
+
+        button.addEventListener('click', function() {
+            if (isOriginalState) {
+                text.innerText = 'The color of the text has been changed!';
+                text.style.color = 'red';
+            } else {
+                text.innerText = 'Click this button to change the color of the text';
+                text.style.color = 'black';
+            }
+            isOriginalState = !isOriginalState;
+        });
+    </script>
+
+</body>
+</html>
